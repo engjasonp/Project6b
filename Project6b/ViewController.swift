@@ -50,7 +50,10 @@ class ViewController: UIViewController {
             view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[\(label)]|", options: .allZeros, metrics: nil, views: viewsDictionary))
         }
         
-        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[label1]-[label2]-[label3]-[label4]-[label5]", options: .allZeros, metrics: nil, views: viewsDictionary))
+        let metrics = ["labelHeight": 88]
+        
+        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[label1(labelHeight@999)]-[label2(label1)]-[label3(label1)]-[label4(label1)]-[label5(label1)]->=10-|", options: .allZeros, metrics: ["labelHeight": 88], views: viewsDictionary))
+        
     }
 
     override func prefersStatusBarHidden() -> Bool {
